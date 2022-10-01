@@ -1,0 +1,54 @@
+<div class="wm-success">
+  <div
+    class="wm-success__container"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <div fxLayoutAlign="center center">
+      <img
+        class="wm-success__trophy"
+        src="assets/images/match-item-min.png"
+        alt="Match"
+      />
+      <div class="wm-success__leader-score">
+        {{ matches }}
+      </div>
+    </div>
+    <span class="wm-success__congrats-text"> MATCHES FOUND </span>
+    <span class="wm-success__you-found"> IN 30 SECONDS </span>
+    <span class="wm-success__share-results" *ngIf="!isShareMode">
+      SHARE YOUR RESULTS
+    </span>
+    <span class="wm-success__share-results" *ngIf="isShareMode">
+      <b>{{ name }}</b> RESULTS
+    </span>
+
+    <a
+      *ngIf="!isShareMode"
+      href="https://www.facebook.com/sharer/sharer.php?u={{
+        url
+      }}&display=popup&ref=plugin&src=like&kid_directed_site=0"
+      target="blank"
+    >
+      <img
+        class="wm-success__facebook-action"
+        src="assets/images/fb-min.png"
+        alt="Facebook"
+      />
+    </a>
+  </div>
+
+  <div
+    *ngIf="!isShareMode"
+    class="wm-success__action-container"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <div class="wm-success__action-btn" (click)="play()">
+      <img src="assets/images/play-again-btn-min.png" alt="Play Again" />
+    </div>
+    <div class="wm-success__action-btn" (click)="leaderBoards()">
+      <img src=" assets/images/leaderboard-btn-min.png" alt="Leaderboard" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+@import '~src/assets/scss/theme-config';
+@import '~src/assets/scss/config';
+
+.#{$style-prefix}-landing {
+  background-image: url(/assets/images/bg-1-min.png);
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+
+  &__logo {
+    height: 35vh;
+  }
+
+  &__container {
+    height: 100%;
+
+    div {
+      height: 100%;
+      padding-right: 20px;
+
+      @include for-desktop {
+        padding-right: 40px;
+      }
+
+      @include for-big-desktop {
+        padding-right: 40px;
+      }
+
+      .wm-action {
+        // width: 80%;
+        height: 17vh;
+        margin-bottom: 20px;
+        min-width: 200px;
+
+        transition: 0.2s ease-in;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+}
