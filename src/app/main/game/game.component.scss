@@ -191,6 +191,7 @@
   }
 
   &__game-tile {
+    min-width: 19.7vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -215,20 +216,20 @@
       &:first-child {
         margin-left: 0.3vh;
         margin-bottom: 0.2vh;
-        height: 22vh;
+        height: 20vh;
         position: absolute;
         z-index: 1;
 
         @include for-phone {
-          height: 20vh;
+          height: 18vh;
         }
 
         @include for-tablet {
-          height: 20vh;
+          height: 18vh;
         }
 
         @include for-small-desktop {
-          height: 22vh;
+          height: 20vh;
         }
       }
 
@@ -351,6 +352,6 @@
   }
 }
 
-.match {
-  z-index: 9999;
-}
+// .match {
+//   z-index: 9999;
+// }

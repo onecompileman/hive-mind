@@ -90,7 +90,7 @@
       <div class="wm-game__pairs">
         <div class="wm-game__pair-item">
           <img src="assets/images/pairs.png" alt="Pair" />
-          <span>
+          <span style="color: black">
             {{ tilesMatch }}
           </span>
         </div>
@@ -122,8 +122,8 @@
 
         <div class="wm-game__pair-item">
           <img src="assets/images/time.png" alt="Time" />
-          <span>
-            {{ time | number: '2-22-2' }}
+          <span style="color: black">
+            {{ time | number: '.2-2' }}
           </span>
         </div>
       </div>
@@ -133,7 +133,7 @@
   <div class="wm-game__game-text animate__animated">
     <img src="assets/images/game.png" alt="Game" />
   </div>
-  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 5">
+  <div class="wm-game__game-text animate__animated" *ngIf="tilesMatch >= 6">
     <img src="assets/images/congrats.png" alt="Game" />
   </div>
   <div class="wm-game__game-text" *ngIf="time >= 30">

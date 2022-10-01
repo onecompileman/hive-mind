@@ -84,7 +84,7 @@ export class GameComponent implements OnInit {
 
             sound.play();
 
-            if (this.tilesMatch >= 5) {
+            if (this.tilesMatch >= 6) {
               let top = -1;
               top =
                 this.leaderboards.length > 0
@@ -102,7 +102,7 @@ export class GameComponent implements OnInit {
                 leaderboard = await this.leaderboardService.create({
                   name: localStorage.getItem('name'),
                   time: this.time,
-                  rank: top + 1,
+                  rank: top,
                 });
               } else {
                 leaderboard = await this.leaderboardService.create({
@@ -141,7 +141,8 @@ export class GameComponent implements OnInit {
 
   private getLeaderboards() {
     this.leaderboardService.leaderboards$.subscribe(
-      (leaderboards) => (this.leaderboards = leaderboards)
+      (leaderboards) =>
+        (this.leaderboards = leaderboards.filter((l) => l.match >= 6))
     );
   }
 
@@ -180,7 +181,7 @@ export class GameComponent implements OnInit {
 
   private startTimeInterval() {
     interval(10)
-      .pipe(filter(() => this.time < 30 && this.tilesMatch < 5))
+      .pipe(filter(() => this.time < 30 && this.tilesMatch < 6))
       .subscribe(async () => {
         this.time += 0.01;
 
